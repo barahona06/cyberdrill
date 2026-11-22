@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "94789332328",
+    "project_id": "cyberdrill-1b630",
+    "storage_bucket": "cyberdrill-1b630.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94789332328:android:f15d4516ece486f8c3badd",
+        "android_client_info": {
+          "package_name": "com.cyberdrill.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjyRgPwlAR96ZVzxGL6-Xel44wPECjg64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
