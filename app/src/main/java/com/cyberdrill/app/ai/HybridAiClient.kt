@@ -122,7 +122,7 @@ data class AiResult(val text: String, val source: AiSource)
 object HybridAiClient {
 
     private const val TAG = "HybridAiClient"
-    private const val CLOUD_MODEL = "gemini-3.8-flash"
+    private const val CLOUD_MODEL = "gemini-2.5-flash"
     private const val PLACEHOLDER_MARKER = "PLACEHOLDER"
 
     /** Temperature of the cloud model instance used ONLY for single-question generation. */

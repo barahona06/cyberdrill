@@ -56,9 +56,9 @@ exposes one `GenerativeModel`. CyberDrill builds three:
 
 | Model | Config | Used for | Why there |
 |---|---|---|---|
-| Hybrid | cloud model `gemini-3.8-flash` + `OnDeviceConfig(InferenceMode.PREFER_ON_DEVICE, maxOutputTokens = 256)` | Flashcard definitions, single mini-quiz questions | Short, structured, single-turn tasks — exactly the envelope Google validates for Gemini Nano. They work offline, instantly, privately, at zero cost; if Nano is unavailable the same call falls back to the cloud automatically. |
-| Cloud, creative | `gemini-3.8-flash`, `temperature = 0.9` | Fresh single questions from the cloud route | Variety is the point: a study app that repeats the same generated question teaches nothing. |
-| Cloud, exam | `gemini-3.8-flash`, strict JSON mode (`responseMimeType = "application/json"`), `maxOutputTokens = 2048`, minimal thinking | Full exam generation, progress analysis | Long, rich generation **in Spanish**. On-device inference is single-turn, short-output, and Google only validates English/Korean on-device — so rich Spanish belongs in the cloud by design, not by accident. The exam is generated as two parallel 5-question blocks with a per-block retry, so one bad block never restarts the whole exam. |
+| Hybrid | cloud model `Gemini Flash` + `OnDeviceConfig(InferenceMode.PREFER_ON_DEVICE, maxOutputTokens = 256)` | Flashcard definitions, single mini-quiz questions | Short, structured, single-turn tasks — exactly the envelope Google validates for Gemini Nano. They work offline, instantly, privately, at zero cost; if Nano is unavailable the same call falls back to the cloud automatically. |
+| Cloud, creative | `Gemini Flash`, `temperature = 0.9` | Fresh single questions from the cloud route | Variety is the point: a study app that repeats the same generated question teaches nothing. |
+| Cloud, exam | `Gemini Flash`, strict JSON mode (`responseMimeType = "application/json"`), `maxOutputTokens = 2048`, minimal thinking | Full exam generation, progress analysis | Long, rich generation **in Spanish**. On-device inference is single-turn, short-output, and Google only validates English/Korean on-device — so rich Spanish belongs in the cloud by design, not by accident. The exam is generated as two parallel 5-question blocks with a per-block retry, so one bad block never restarts the whole exam. |
 
 Every response's `response.inferenceSource` (`ON_DEVICE` / `IN_CLOUD`) is
 read and displayed as a badge in the UI. On-device model lifecycle is managed
